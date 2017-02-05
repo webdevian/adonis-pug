@@ -1,0 +1,30 @@
+{
+  "name": "adonis-pug",
+  "version": "1.0.0",
+  "description": "Pug templating provider for AdonisJs",
+  "keywords": "adonis, pug, template, provider, adonisjs, pugjs",
+  "author": "webdevian",
+  "license": "MIT",
+  "dependencies": {
+    "pug": "^2.0.0-beta11"
+  },
+  "peerDependencies": {
+    "adonis-fold": "^3.0.3"
+  },
+  "devDependencies": {
+    "standard": "^8.6.0"
+  },
+  "standard": {
+    "global": [
+      "use"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webdevian/adonis-pug.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webdevian/adonis-pug/issues"
+  },
+  "homepage": "https://github.com/webdevian/adonis-pug#readme"
+}
