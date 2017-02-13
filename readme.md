@@ -71,7 +71,7 @@ Pug.renderString('p Hello World', options)
 ##### Output html from a rendered pug template
 ```javascript
 const Pug = use('Pug')
-Pug.renderString('myPugTemplate', {
+Pug.render('myPugTemplate', {
   message: 'Hello World'
 })
 ```
