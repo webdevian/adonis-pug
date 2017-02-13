@@ -52,6 +52,8 @@ Pug options can be added to config.app.js:
 ## Usage
 
 ##### Send a rendered pug template as a response
+`use('Pug')` must be inserted somewhere to add the pug method to the response object. A good place for this is in `bootstrap/http.js`
+
 ```javascript
 Route.get('/', function * (request, response) {
   response.pug('myPugTemplate', {
