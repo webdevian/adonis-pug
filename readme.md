@@ -35,7 +35,7 @@ const aliases = {
 
 ## Config
 
-Pug options can be added to config.app.js:
+Pug options can be added to `config.app.js`:
 
 ```javascript
   ...,
@@ -48,6 +48,19 @@ Pug options can be added to config.app.js:
     debug: false
   }
 ```
+
+## Middleware (Shield and Flash)
+
+Methods and variables from the Adonis Shield and Flash middleware can be injected as pug variables by registering this module as middleware in `app/Http/kernel.js`:
+
+```javascript
+const globalMiddleware = [
+  ...,
+  'Adonis/Addons/Pug'
+]
+```
+
+The available methods/variables are `flashMessages`, `old()`, `cspNonce` and `csrfToken`. The Flash and Shield middleware must also be enabled and loaded before Adonis-pug.
 
 ## Usage
 

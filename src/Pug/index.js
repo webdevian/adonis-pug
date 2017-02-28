@@ -27,6 +27,32 @@ class Pug {
     }
   }
 
+  * handle (request, response, next) {
+    // Inject flashMessages (from flash middleware)
+    if (request._flashMessages) {
+      this.global('flashMessages', request._flashMessages.getValues)
+    }
+
+    // Inject old method (from flash middleware)
+    if (request.old) {
+      this.global('old', function (key, defaultValue) {
+        return request.old(key, defaultValue)
+      })
+    }
+
+    // Inject cspNonce (from shield middleware)
+    if (request.nonce()) {
+      this.global('cspNonce', request.nonce())
+    }
+
+    // Inject cspNonce (from shield middleware)
+    if (request.csrfToken()) {
+      this.global('csrfToken', request.csrfToken())
+    }
+
+    yield next
+  }
+
   /**
   * Render a pug template
   *
@@ -76,6 +102,21 @@ class Pug {
       options = this.options
     }
     return options
+  }
+
+  /**
+   * add a global method or variables to views
+   *
+   * @param  {String} name
+   * @param  {Mixed} value
+   *
+   * @example
+   * pug.global('key', value)
+   *
+   * @public
+   */
+  global (name, value) {
+    this.options[name] = value
   }
 }
 
