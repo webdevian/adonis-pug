@@ -27,6 +27,10 @@ class Pug {
       self: Config.get('app.pug.self') || false,
       debug: Config.get('app.pug.debug') || false
     }
+
+    // Inject globals from config
+    const inject = Config.get('app.pug.inject', {})
+    this.options = Object.assign(this.options, inject)
   }
 
   /**
