@@ -46,8 +46,15 @@ Pug options can be added to `config.app.js`:
     filters: undefined,
     self: false,
     debug: false
+    globals: {
+      moment: use('moment')
+    }
   }
 ```
+
+### Injection
+
+You can add variables into pug globally using the inject object (see above)
 
 ## Middleware (Shield and Flash)
 
