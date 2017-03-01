@@ -60,7 +60,7 @@ const globalMiddleware = [
 ]
 ```
 
-The available methods/variables are `flashMessages`, `old()`, `cspNonce` and `csrfToken`. The Flash and Shield middleware must also be enabled and loaded before Adonis-pug.
+The available methods/variables are `flashMessages`, `old()`, `cspNonce` and `csrfToken`. The Flash and Shield middleware must also be enabled and loaded before Adonis-pug. Also the `Config.get()` method is also available as `config()` and `request.input()` is available as `input()`.
 
 ## Usage
 

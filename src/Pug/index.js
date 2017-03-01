@@ -8,6 +8,8 @@ const Helpers = use('Helpers')
 class Pug {
 
   constructor (Config) {
+    this.config = Config
+
     // Warn if basedir is not set in config
     if (!Config.get('app.pug.basedir')) {
       console.warn('Pug views directory (config/app.js - pug.basedir) not set, defaulting to "resources/views"')
@@ -27,6 +29,16 @@ class Pug {
     }
   }
 
+  /**
+   * @description middleware handle method to inject methods
+   * and variables to the view
+   * @method handle
+   * @param  {Object}   request
+   * @param  {Object}   response
+   * @param  {Function} next
+   * @return {Function}
+   * @public
+   */
   * handle (request, response, next) {
     // Inject flashMessages (from flash middleware)
     if (request._flashMessages) {
@@ -34,7 +46,7 @@ class Pug {
     }
 
     // Inject old method (from flash middleware)
-    if (request.old) {
+    if (typeof request.old === 'function') {
       this.global('old', function (key, defaultValue) {
         return request.old(key, defaultValue)
       })
@@ -48,6 +60,20 @@ class Pug {
     // Inject cspNonce (from shield middleware)
     if (request.csrfToken()) {
       this.global('csrfToken', request.csrfToken())
+    }
+
+    // Inject request.input()
+    if (typeof request.input === 'function') {
+      this.global('input', function (key, defaultValue) {
+        return request.input(key, defaultValue)
+      })
+    }
+
+    const Config = this.config
+    if (typeof Config.get === 'function') {
+      this.global('config', function (key, defaultValue) {
+        return Config.get(key, defaultValue)
+      })
     }
 
     yield next
