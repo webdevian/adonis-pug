@@ -57,12 +57,12 @@ class Pug {
     }
 
     // Inject cspNonce (from shield middleware)
-    if (request.nonce()) {
+    if (typeof request.nonce === 'function' && request.nonce()) {
       this.global('cspNonce', request.nonce())
     }
 
     // Inject cspNonce (from shield middleware)
-    if (request.csrfToken()) {
+    if (typeof request.csrfToken === 'function' && request.csrfToken()) {
       this.global('csrfToken', request.csrfToken())
     }
 
