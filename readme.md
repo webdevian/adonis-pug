@@ -69,6 +69,18 @@ const globalMiddleware = [
 
 The available methods/variables are `flashMessages`, `old()`, `cspNonce` and `csrfToken`. The Flash and Shield middleware must also be enabled and loaded before Adonis-pug. Also the `Config.get()` method is also available as `config()` and `request.input()` is available as `input()`.
 
+## Mail
+
+Adonis-pug extends adonis-mail-provider (if you have it installed) to render pug templates instead of nunjucks when using the Mail.send() method. To override Mail add this line:
+
+##### bootstrap/app.js
+```javascript
+const aliases = {
+  ...,
+  Mail: 'Adonis/Addons/PugMail'
+}
+``` 
+
 ## Usage
 
 ##### Send a rendered pug template as a response
