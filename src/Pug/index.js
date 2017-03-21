@@ -100,6 +100,17 @@ class Pug {
   }
 
   /**
+   * Generator alias for render
+   *
+   * @param  {String}  template  The name of the template file
+   * @param  {Object}  options   Pug options / data
+   * @return {String}
+   */
+  * make (template, options) {
+    return this.render(template, options)
+  }
+
+  /**
   * Render a pug string
   *
   * @param  {String}  string    A pug string
