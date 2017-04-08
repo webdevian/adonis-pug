@@ -1,5 +1,7 @@
 # adonis-pug
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/webdevian/adonis-pug.svg)](https://greenkeeper.io/)
+
 [Pug](https://github.com/pugjs/pug) templating provider for AdonisJs framework.
 
 ## Installation
