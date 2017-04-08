@@ -12,7 +12,7 @@
     "adonis-fold": "^3.0.3"
   },
   "devDependencies": {
-    "standard": "^8.6.0"
+    "standard": "^10.0.1"
   },
   "standard": {
     "global": [
