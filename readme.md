@@ -54,7 +54,7 @@ Pug options can be added to `config.app.js`:
 
 ### Injection
 
-You can add variables into pug globally using the inject object (see above)
+You can add variables into pug globally using the globals object (see above)
 
 ## Middleware (Shield and Flash)
 
