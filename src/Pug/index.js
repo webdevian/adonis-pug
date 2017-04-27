@@ -22,6 +22,7 @@ class Pug {
     this.options = {
       basedir: this.viewsPath,
       pretty: Config.get('app.pug.pretty') || false,
+      cache: Config.get('app.pug.cache') || false,
       doctype: Config.get('app.pug.doctype') || undefined,
       filters: Config.get('app.pug.filters') || undefined,
       self: Config.get('app.pug.self') || false,

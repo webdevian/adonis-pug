@@ -42,6 +42,7 @@ Pug options can be added to `config.app.js`:
   pug: {
     basedir: 'resources/views',
     pretty: false,
+    cache: false, // Recommend setting this to true for 10x big performance boost
     doctype: undefined,
     filters: undefined,
     self: false,
