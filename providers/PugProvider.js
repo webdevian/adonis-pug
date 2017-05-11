@@ -18,6 +18,35 @@ class PugProvider extends ServiceProvider {
       // Extend response with pug method
       const Response = app.use('Adonis/Src/Response')
       Response.macro('pug', function (template, options) {
+        // Inject flashMessages (from flash middleware)
+        if (this.request._flashMessages) {
+          options.flashMessages = this.request._flashMessages.getValues
+        }
+
+        // Inject old method (from flash middleware)
+        if (typeof this.request.old === 'function') {
+          options.old = (key, defaultValue) => this.request.old(key, defaultValue)
+        }
+
+        // Inject cspNonce (from shield middleware)
+        if (typeof this.request.nonce === 'function' && this.request.nonce()) {
+          options.cspNonce = this.request.nonce()
+        }
+
+        // Inject cspNonce (from shield middleware)
+        if (typeof this.request.csrfToken === 'function' && this.request.csrfToken()) {
+          options.csrfToken = this.request.csrfToken()
+        }
+
+        // Inject this.request.input()
+        if (typeof this.request.input === 'function') {
+          options.input = (key, defaultValue) => this.request.input(key, defaultValue)
+        }
+
+        if (typeof Config.get === 'function') {
+          options.config = (key, defaultValue) => Config.get(key, defaultValue)
+        }
+
         return this.send(pug.render(template, options))
       })
 

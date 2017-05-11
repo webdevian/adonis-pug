@@ -57,18 +57,16 @@ Pug options can be added to `config.app.js`:
 
 You can add variables into pug globally using the globals object (see above)
 
-## Middleware (Shield and Flash)
+## Helpers
 
-Methods and variables from the Adonis Shield and Flash middleware can be injected as pug variables by registering this module as middleware in `app/Http/kernel.js`:
+The response.pug method automatically passes some useful functions and variables to your view data.
 
-```javascript
-const globalMiddleware = [
-  ...,
-  'Adonis/Addons/Pug'
-]
-```
-
-The available methods/variables are `flashMessages`, `old()`, `cspNonce` and `csrfToken`. The Flash and Shield middleware must also be enabled and loaded before Adonis-pug. Also the `Config.get()` method is also available as `config()` and `request.input()` is available as `input()`.
+- `flashMessages` Flash message object from session
+- `old()` Old method from request
+- `cspNonce` The CSP Nonce
+- `csrfToken` The CSRF Token
+- `config()` Alias for Config.get()
+- `input()` Alias for request.input()
 
 ## Mail
 

@@ -1,6 +1,6 @@
 {
   "name": "adonis-pug",
-  "version": "1.4.1",
+  "version": "2.0.0",
   "description": "Pug templating provider for AdonisJs",
   "keywords": "adonis, pug, template, provider, adonisjs, pugjs",
   "author": "webdevian",

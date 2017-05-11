@@ -35,56 +35,6 @@ class Pug {
   }
 
   /**
-   * @description middleware handle method to inject methods
-   * and variables to the view
-   * @method handle
-   * @param  {Object}   request
-   * @param  {Object}   response
-   * @param  {Function} next
-   * @return {Function}
-   * @public
-   */
-  * handle (request, response, next) {
-    // Inject flashMessages (from flash middleware)
-    if (request._flashMessages) {
-      this.global('flashMessages', request._flashMessages.getValues)
-    }
-
-    // Inject old method (from flash middleware)
-    if (typeof request.old === 'function') {
-      this.global('old', function (key, defaultValue) {
-        return request.old(key, defaultValue)
-      })
-    }
-
-    // Inject cspNonce (from shield middleware)
-    if (typeof request.nonce === 'function' && request.nonce()) {
-      this.global('cspNonce', request.nonce())
-    }
-
-    // Inject cspNonce (from shield middleware)
-    if (typeof request.csrfToken === 'function' && request.csrfToken()) {
-      this.global('csrfToken', request.csrfToken())
-    }
-
-    // Inject request.input()
-    if (typeof request.input === 'function') {
-      this.global('input', function (key, defaultValue) {
-        return request.input(key, defaultValue)
-      })
-    }
-
-    const Config = this.config
-    if (typeof Config.get === 'function') {
-      this.global('config', function (key, defaultValue) {
-        return Config.get(key, defaultValue)
-      })
-    }
-
-    yield next
-  }
-
-  /**
   * Render a pug template
   *
   * @param  {String}  template  The name of the template file
@@ -144,21 +94,6 @@ class Pug {
       options = this.options
     }
     return options
-  }
-
-  /**
-   * add a global method or variables to views
-   *
-   * @param  {String} name
-   * @param  {Mixed} value
-   *
-   * @example
-   * pug.global('key', value)
-   *
-   * @public
-   */
-  global (name, value) {
-    this.options[name] = value
   }
 }
 
