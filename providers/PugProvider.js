@@ -17,7 +17,7 @@ class PugProvider extends ServiceProvider {
 
       // Extend response with pug method
       const Response = app.use('Adonis/Src/Response')
-      Response.macro('pug', function (template, options) {
+      Response.macro('pug', function (template, options = {}) {
         // Inject flashMessages (from flash middleware)
         if (this.request._flashMessages) {
           options.flashMessages = this.request._flashMessages.getValues
