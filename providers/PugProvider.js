@@ -23,6 +23,11 @@ class PugProvider extends ServiceProvider {
           options.flashMessages = this.request._flashMessages.getValues
         }
 
+        // Inject Current User
+        if (this.request.currentUser) {
+          options.currentUser = this.request.currentUser
+        }
+
         // Inject old method (from flash middleware)
         if (typeof this.request.old === 'function') {
           options.old = (key, defaultValue) => this.request.old(key, defaultValue)
