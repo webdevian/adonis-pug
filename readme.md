@@ -62,6 +62,7 @@ You can add variables into pug globally using the globals object (see above)
 The response.pug method automatically passes some useful functions and variables to your view data.
 
 - `flashMessages` Flash message object from session
+- `currentUser` Current User model instance from session
 - `old()` Old method from request
 - `cspNonce` The CSP Nonce
 - `csrfToken` The CSRF Token
