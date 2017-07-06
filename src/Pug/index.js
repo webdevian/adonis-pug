@@ -32,6 +32,9 @@ class Pug {
     // Inject globals from config
     const globals = Config.get('app.pug.globals', {})
     this.options = Object.assign(this.options, globals)
+
+    // Pass Config.get function to globals
+    this.options.config = (key, defaultValue) => Config.get(key, defaultValue)
   }
 
   /**

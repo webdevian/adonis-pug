@@ -48,10 +48,6 @@ class PugProvider extends ServiceProvider {
           options.input = (key, defaultValue) => this.request.input(key, defaultValue)
         }
 
-        if (typeof Config.get === 'function') {
-          options.config = (key, defaultValue) => Config.get(key, defaultValue)
-        }
-
         return this.send(pug.render(template, options))
       })
 
