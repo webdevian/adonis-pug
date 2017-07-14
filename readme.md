@@ -49,13 +49,16 @@ Pug options can be added to `config.app.js`:
     debug: false
     globals: {
       moment: use('moment')
+    },
+    requestInject: {
+      menu: 'mainMenu'
     }
   }
 ```
 
 ### Injection
 
-You can add variables into pug globally using the globals object (see above)
+You can add variables into pug globally using the globals object (see above). You can add any methods are properties from request to the pug scope with the requestInject array (see above). For example, you might have some middleware that fetches the menu for a given user and adds it to the request object as 'menu', this can be injected into every pug view as 'mainMenu' instead of passing it to the view in every controller.
 
 ## Helpers
 
