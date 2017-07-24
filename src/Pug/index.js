@@ -11,26 +11,26 @@ class Pug {
     this.config = Config
 
     // Warn if basedir is not set in config
-    if (!Config.get('app.pug.basedir')) {
+    if (!Config.get('pug.basedir')) {
       console.warn('Pug views directory (config/app.js - pug.basedir) not set, defaulting to "resources/views"')
     }
 
     // Prepend adonis root to basedir
-    this.viewsPath = Helpers.basePath() + '/' + (Config.get('app.pug.basedir') || 'resources/views')
+    this.viewsPath = Helpers.basePath() + '/' + (Config.get('pug.basedir') || 'resources/views')
 
     // Create options array
     this.options = {
       basedir: this.viewsPath,
-      pretty: Config.get('app.pug.pretty') || false,
-      cache: Config.get('app.pug.cache') || false,
-      doctype: Config.get('app.pug.doctype') || undefined,
-      filters: Config.get('app.pug.filters') || undefined,
-      self: Config.get('app.pug.self') || false,
-      debug: Config.get('app.pug.debug') || false
+      pretty: Config.get('pug.pretty') || false,
+      cache: Config.get('pug.cache') || false,
+      doctype: Config.get('pug.doctype') || undefined,
+      filters: Config.get('pug.filters') || undefined,
+      self: Config.get('pug.self') || false,
+      debug: Config.get('pug.debug') || false
     }
 
     // Inject globals from config
-    const globals = Config.get('app.pug.globals', {})
+    const globals = Config.get('pug.globals', {})
     this.options = Object.assign(this.options, globals)
 
     // Pass Config.get function to globals

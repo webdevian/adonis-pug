@@ -48,7 +48,7 @@ class PugProvider extends ServiceProvider {
           options.input = (key, defaultValue) => this.request.input(key, defaultValue)
         }
 
-        const requestInjectors = Config.get('app.pug.requestInject', {})
+        const requestInjectors = Config.get('pug.requestInject', {})
 
         Object.keys(requestInjectors).forEach(injector => {
           if (this.request[injector]) {
