@@ -35,11 +35,10 @@ const aliases = {
 
 ## Config
 
-Pug options can be added to `config.app.js`:
+Pug options can be added to `config/pug.js`:
 
 ```javascript
-  ...,
-  pug: {
+  module.exports = {
     basedir: 'resources/views',
     pretty: false,
     cache: false, // Recommend setting this to true for 10x big performance boost
