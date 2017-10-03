@@ -1,6 +1,6 @@
 'use strict'
 
-const { ServiceProvider } = require('@adonisjs/fold');
+const { ServiceProvider } = require('@adonisjs/fold')
 
 /**
  * Provider for pug template rendering

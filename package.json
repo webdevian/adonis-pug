@@ -1,6 +1,6 @@
 {
   "name": "adonis-pug",
-  "version": "3.0.0",
+  "version": "3.0x.0",
   "description": "Pug templating provider for AdonisJs",
   "keywords": "adonis, pug, template, provider, adonisjs, pugjs",
   "author": "webdevian",
@@ -9,7 +9,7 @@
     "pug": "^2.0.0-beta11"
   },
   "peerDependencies": {
-    "adonis-fold": "^3.0.3"
+    "adonis-fold": "^4.0.2"
   },
   "devDependencies": {
     "standard": "^8.6.0"
