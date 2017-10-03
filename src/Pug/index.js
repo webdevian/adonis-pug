@@ -15,7 +15,7 @@ class Pug {
     }
 
     // Prepend adonis root to basedir
-    this.viewsPath = Helpers.basePath() + '/' + (Config.get('pug.basedir') || 'resources/views')
+    this.viewsPath = Helpers._appRoot + '/' + (Config.get('pug.basedir') || 'resources/views')
 
     // Create options array
     this.options = {

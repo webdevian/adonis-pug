@@ -67,7 +67,7 @@ class PugProvider extends ServiceProvider {
     this.app.singleton('Adonis/Addons/PugMail', function (app) {
       const Helpers = use('Adonis/Src/Helpers')
       try {
-        const MailManager = require(Helpers.basePath() + '/node_modules/@adonisjs/mail/src/Mail/Manager')
+        const MailManager = require(Helpers._appRoot + '/node_modules/@adonisjs/mail/src/Mail/Manager')
 
         const Pug = app.use('Adonis/Addons/Pug')
         const Config = app.use('Adonis/Src/Config')
