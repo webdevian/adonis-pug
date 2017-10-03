@@ -23,16 +23,6 @@ const providers = [
 ]
 ```
 
-Also, set up an alias to avoid typing the complete namespace.
-
-##### bootstrap/app.js
-```javascript
-const aliases = {
-  ...,
-  Pug: 'Adonis/Addons/Pug'
-}
-```
-
 ## Config
 
 Pug options can be added to `config/pug.js`:
@@ -73,15 +63,7 @@ The response.pug method automatically passes some useful functions and variables
 
 ## Mail
 
-Adonis-pug extends adonis-mail-provider (if you have it installed) to render pug templates instead of nunjucks when using the Mail.send() method. To override Mail add this line:
-
-##### bootstrap/app.js
-```javascript
-const aliases = {
-  ...,
-  Mail: 'Adonis/Addons/PugMail'
-}
-``` 
+Adonis-pug extends adonis-mail-provider (if you have it installed) to render pug templates instead of nunjucks when using the Mail.send() method.
 
 ## Usage
 

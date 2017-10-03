@@ -1,6 +1,6 @@
 'use strict'
 
-const ServiceProvider = require('adonis-fold').ServiceProvider
+const { ServiceProvider } = require('@adonisjs/fold');
 
 /**
  * Provider for pug template rendering
@@ -8,8 +8,7 @@ const ServiceProvider = require('adonis-fold').ServiceProvider
  * @extends ServiceProvider
  */
 class PugProvider extends ServiceProvider {
-
-  * register () {
+  register () {
     this.app.bind('Adonis/Addons/Pug', function (app) {
       const Config = app.use('Adonis/Src/Config')
       const Pug = require('../src/Pug')
@@ -62,11 +61,13 @@ class PugProvider extends ServiceProvider {
       return pug
     })
 
-    // Extend Mail with PugMail. If adonis-mail-provider is not install it will fail silently
+    this.app.alias('Adonis/Addons/Pug', 'Pug')
+
+    // Extend Mail with PugMail. If adonis-mail-provider is not installed it will fail silently
     this.app.singleton('Adonis/Addons/PugMail', function (app) {
       const Helpers = use('Adonis/Src/Helpers')
       try {
-        const MailManager = require(Helpers.basePath() + '/node_modules/adonis-mail-provider/src/Mail/MailManager')
+        const MailManager = require(Helpers.basePath() + '/node_modules/@adonisjs/mail/src/Mail/Manager')
 
         const Pug = app.use('Adonis/Addons/Pug')
         const Config = app.use('Adonis/Src/Config')
@@ -75,6 +76,8 @@ class PugProvider extends ServiceProvider {
         return false
       }
     })
+
+    this.app.alias('Adonis/Addons/PugMail', 'Mail')
   }
 }
 

@@ -6,7 +6,6 @@ const Helpers = use('Helpers')
  * @class
  */
 class Pug {
-
   constructor (Config) {
     this.config = Config
 
