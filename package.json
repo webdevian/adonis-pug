@@ -9,7 +9,7 @@
     "pug": "^2.0.0-beta11"
   },
   "peerDependencies": {
-    "adonis-fold": "^4.0.2"
+    "@adonisjs/fold": "^4.0.2"
   },
   "devDependencies": {
     "standard": "^8.6.0"
