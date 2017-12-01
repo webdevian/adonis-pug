@@ -65,9 +65,8 @@ class PugProvider extends ServiceProvider {
 
     // Extend Mail with PugMail. If adonis-mail-provider is not installed it will fail silently
     this.app.singleton('Adonis/Addons/PugMail', function (app) {
-      const Helpers = use('Adonis/Src/Helpers')
       try {
-        const MailManager = require(Helpers._appRoot + '/node_modules/@adonisjs/mail/src/Mail/Manager')
+        const MailManager = use('@adonisjs/mail/src/Mail/Manager')
 
         const Pug = app.use('Adonis/Addons/Pug')
         const Config = app.use('Adonis/Src/Config')
