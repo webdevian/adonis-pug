@@ -1,3 +1,18 @@
+# Adonis 4 Compatibility branch - WIP
+
+Complete refactor to bring everything inline with the AdonisViewProvider
+
+### TODO
+
+- Missing functionality
+  - Dot notation in template path
+- Readme
+  - Copy relevant stuff from Adonis View docs
+  - Config
+  - Badges
+- Make view command
+- Tests
+
 # adonis-pug
 
 [Pug](https://github.com/pugjs/pug) templating provider for AdonisJs framework.

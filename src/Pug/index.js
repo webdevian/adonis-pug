@@ -1,5 +1,5 @@
 const pug = require('pug')
-const Helpers = use('Helpers')
+const Helpers = require('Helpers')
 
 /**
  * Provider for pug template rendering
