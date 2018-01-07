@@ -23,16 +23,16 @@ module.exports = function (View, Route, Config) {
   /**
    * Make link tag for css
    */
-  View.global('css', function (url, skipPrefix = false) {
-    url = !url.endsWith('.css') && !skipPrefix ? `${url}.css` : url
+  View.global('css', function (url, skipSuffix = false) {
+    url = !url.endsWith('.css') && !skipSuffix ? `${url}.css` : url
     return `<link rel="stylesheet" href="${this.globals.assetsUrl(url)}" />`
   })
 
   /**
    * Make script tag for javascript
    */
-  View.global('script', function (url, skipPrefix = false) {
-    url = !url.endsWith('.js') && !skipPrefix ? `${url}.js` : url
+  View.global('script', function (url, skipSuffix = false) {
+    url = !url.endsWith('.js') && !skipSuffix ? `${url}.js` : url
     return `<script type="text/javascript" src="${this.globals.assetsUrl(url)}"></script>`
   })
 }

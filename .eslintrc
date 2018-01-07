@@ -1,3 +1,6 @@
 {
-  "extends": "apc"
+  "extends": "apc",
+  "globals": {
+    "use": true
+  }
 }

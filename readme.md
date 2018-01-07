@@ -5,9 +5,10 @@ Complete refactor to bring everything inline with the AdonisViewProvider
 ### TODO
 
 - Missing functionality
-  - Dot notation in template path
+  - config validation and warnings
 - Readme
   - Copy relevant stuff from Adonis View docs
+  - document pass locals to render
   - Config
   - Badges
 - Make view command

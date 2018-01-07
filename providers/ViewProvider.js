@@ -43,11 +43,10 @@ class ViewProvider extends AdonisViewProvider {
 
     /**
      * Registers an isolated instance of view on the
-     * response object. Each view has access to
-     * the request object.
+     * context object.
      */
     Context.getter('view', function () {
-      return View.share({})
+      return View.new()
     }, true)
   }
 }
