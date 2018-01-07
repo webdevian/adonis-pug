@@ -1,0 +1,6 @@
+{
+  "extends": "apc",
+  "globals": {
+    "use": true
+  }
+}
