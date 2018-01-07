@@ -11,6 +11,7 @@ Complete refactor to bring everything inline with the AdonisViewProvider
   - Config validation and warnings
   - Make view command
 - Document code
+- Release v4 on NPM
 
 # adonis-pug
 
