@@ -30,14 +30,27 @@
     "sinon": "^4.1.2",
     "sinon-chai": "^2.14.0"
   },
-  "standard": {
-    "global": [
-      "use"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/webdevian/adonis-pug.git"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.js",
+      "providers/**/*.js"
+    ],
+    "all": true,
+    "watermarks": {
+      "lines": [90, 99],
+      "functions": [90, 99],
+      "branches": [90, 99],
+      "statements": [90, 99]
+    },
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "cache": true
   },
   "bugs": {
     "url": "https://github.com/webdevian/adonis-pug/issues"

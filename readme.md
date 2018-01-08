@@ -7,9 +7,7 @@ Complete refactor to bring everything inline with the AdonisViewProvider
 
 ### TODO
 
-- Missing functionality
-  - Config validation and warnings
-  - Make view command
+- Make view command
 - Document code
 - Release v4 on NPM
 
@@ -49,6 +47,8 @@ Pug options can be added to `config/pug.js`, these will be passed to the pug eng
     debug: false
   }
 ```
+
+See the [Pug API documentation](https://pugjs.org/api/reference.html) for more info on these options.
 
 ## Usage
 

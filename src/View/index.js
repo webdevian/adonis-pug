@@ -12,12 +12,12 @@ class View extends AdonisView {
 
     this.options = {
       basedir: this.viewsPath,
-      pretty: Config.get('pug.pretty') || false,
-      cache: Config.get('pug.cache') || false,
+      pretty: !!Config.get('pug.pretty') || false,
+      cache: !!Config.get('pug.cache') || false,
       doctype: Config.get('pug.doctype') || undefined,
-      filters: Config.get('pug.filters') || undefined,
-      self: Config.get('pug.self') || false,
-      debug: Config.get('pug.debug') || false
+      filters: Config.get('pug.filters') || {},
+      self: !!Config.get('pug.self') || false,
+      debug: !!Config.get('pug.debug') || false
     }
 
     this.globals = {}

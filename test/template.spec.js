@@ -84,6 +84,18 @@ describe('Template class', () => {
     expect(template.render('basic')).to.equal('<a title="my-link">link</a>')
   })
 
+  it('Rendered templates are cached', () => {
+    const config = new Config()
+    config.set('pug.cache', true)
+    view = new View(new Helpers(path.join(__dirname, './')), config)
+    template = view.new()
+
+    expect(template.engine.cache[template.viewsPath + '/basic.pug']).to.equal(undefined)
+    template.render('basic')
+
+    expect(template.engine.cache[template.viewsPath + '/basic.pug']).to.be.a('function')
+  })
+
   it('Render a pug template with dot notation', () => {
     expect(template.render('subdir.template')).to.equal('<h1>In a subdirectory</h1>')
   })
