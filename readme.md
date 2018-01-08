@@ -68,10 +68,10 @@ The view.render method takes the relative path to the view file. There is no nee
 
 ## View Methods
 
-These methods are available on the view context context object in controllers and middleware.
+These methods are available on the view context object in controllers and middleware.
 
 #### view.share(locals)
-Share variables as a local with this template context
+Share variables as a local with this template context.
 
 
 | Param | Type | Description |
