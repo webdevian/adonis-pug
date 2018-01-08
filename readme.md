@@ -24,7 +24,12 @@ Make sure the default edge provider (`@adonisjs/framework/providers/ViewProvider
 
 #### Compatibility
 
-*This package has been rebuilt for Adonis 4 and is incompatible with Adonis 3 and earlier. For Adonis v3 install with `adonis-pug@<4.x`. View the docs for this version [here](https://github.com/webdevian/adonis-pug/blob/3.0.1/readme.md).*
+*This package has been rebuilt for Adonis 4 and is incompatible with Adonis 3 and earlier. 
+For Adonis v3 install the previous version (3.01) with :*
+
+```
+npm install adonis-pug@<4.x --save
+```
 
 ## Config
 
