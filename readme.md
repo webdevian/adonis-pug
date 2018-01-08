@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/webdevian/adonis-pug.svg?branch=master)](https://travis-ci.org/webdevian/adonis-pug) [![Coverage Status](https://coveralls.io/repos/github/webdevian/adonis-pug/badge.svg?branch=master)](https://coveralls.io/github/webdevian/adonis-pug?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/webdevian/adonis-pug.svg)](https://greenkeeper.io/) [![Maintainability](https://api.codeclimate.com/v1/badges/af5c99c485663e078c61/maintainability)](https://codeclimate.com/github/webdevian/adonis-pug/maintainability)
+[![Build Status](https://travis-ci.org/webdevian/adonis-pug.svg?branch=master)](https://travis-ci.org/webdevian/adonis-pug) [![Coverage Status](https://coveralls.io/repos/github/webdevian/adonis-pug/badge.svg?branch=master)](https://coveralls.io/github/webdevian/adonis-pug?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/webdevian/adonis-pug.svg)](https://greenkeeper.io/) [![Maintainability](https://api.codeclimate.com/v1/badges/af5c99c485663e078c61/maintainability)](https://codeclimate.com/github/webdevian/adonis-pug/maintainability)ff
 
 # Adonis Pug
 
@@ -24,7 +24,12 @@ Make sure the default edge provider (`@adonisjs/framework/providers/ViewProvider
 
 #### Compatibility
 
-*This package has been rebuilt for Adonis 4 and is incompatible with Adonis 3 and earlier. For Adonis v3 install with `adonis-pug@<4.x`. View the docs for this version [here](https://github.com/webdevian/adonis-pug/blob/3.0.1/readme.md).*
+*This package has been rebuilt for Adonis 4 and is incompatible with Adonis 3 and earlier. 
+For Adonis v3 install the previous version (3.01) with :*
+
+```
+npm install adonis-pug@<4.x --save
+```
 
 ## Config
 
@@ -45,7 +50,7 @@ See the [Pug API documentation](https://pugjs.org/api/reference.html) for more i
 
 ## Basic Usage
 
-Let’s start with the basic example of saying `Hello world` by rendering a pug template. All of the views are stored inside resources/views directory and ends with .pug extension.
+Let’s start with the basic example of saying `Hello world` by rendering a pug template. All of the views are stored inside `resources/views` directory and end with `.pug` extension.
 
 Create a pug template at `resources/views/hello.pug`. You can use an adonis/ace command to create the view.
 
@@ -68,10 +73,10 @@ The view.render method takes the relative path to the view file. There is no nee
 
 ## View Methods
 
-These methods are available on the view context context object in controllers and middleware.
+These methods are available on the view context object in controllers and middleware.
 
 #### view.share(locals)
-Share variables as a local with this template context
+Share variables as a local with this template context.
 
 
 | Param | Type | Description |
@@ -188,7 +193,7 @@ a(href="route('UserController.show', { id: 1 }) View profile
 ### auth
 If you are using the auth provider, then you can access the current logged in user using the `auth.user` object.
 
-###csrfField
+### csrfField
 If you are using the shield middleware, you can access the `csrfToken` and field using one of the following methods.
 
 ```pug
