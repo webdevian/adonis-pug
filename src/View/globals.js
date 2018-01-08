@@ -1,5 +1,16 @@
 'use strict'
 
+/**
+ * Add a filetyp suffix to a url
+ * @param  {String} url         Original Url
+ * @param  {String} suffix      Filename suffix
+ * @param  {Boolean} skipSuffix Should we just ignore missing suffix
+ * @return {String}             New Url
+ */
+const appendToUrl = (url, suffix, skipSuffix) => {
+  return !url.endsWith(`.${suffix}`) && !skipSuffix ? `${url}.${suffix}` : url
+}
+
 module.exports = function (View, Route, Config) {
   /**
    * Return url for the route
@@ -25,8 +36,7 @@ module.exports = function (View, Route, Config) {
    * @return {String}                    HTML link tag
    */
   View.global('css', function (url, skipSuffix = false) {
-    url = !url.endsWith('.css') && !skipSuffix ? `${url}.css` : url
-    return `<link rel="stylesheet" href="${this.globals.assetsUrl(url)}" />`
+    return `<link rel="stylesheet" href="${this.globals.assetsUrl(appendToUrl(url, 'css', skipSuffix))}" />`
   })
 
   /**
@@ -37,7 +47,6 @@ module.exports = function (View, Route, Config) {
    * @return {String}                    HTML script tag
    */
   View.global('script', function (url, skipSuffix = false) {
-    url = !url.endsWith('.js') && !skipSuffix ? `${url}.js` : url
-    return `<script type="text/javascript" src="${this.globals.assetsUrl(url)}"></script>`
+    return `<script type="text/javascript" src="${this.globals.assetsUrl(appendToUrl(url, 'js', skipSuffix))}"></script>`
   })
 }
