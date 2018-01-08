@@ -57,6 +57,10 @@ describe('Template class', () => {
     expect(template.locals.myFunc()).to.equal(true)
   })
 
+  it('Safe method returns same string', () => {
+    expect(template.safe('a(title="my-link") link')).to.equal('a(title="my-link") link')
+  })
+
   it('Render a string of pug', () => {
     template = new Template(view.engine, '', {}, {})
 

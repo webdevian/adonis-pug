@@ -50,6 +50,10 @@ class Template {
   _getOptions () {
     return Object.assign(this.locals, Object.assign(this.options, this.globals))
   }
+
+  safe (string) {
+    return string
+  }
 }
 
 module.exports = Template

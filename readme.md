@@ -204,7 +204,7 @@ p= getMessage('success')
 // Renders <p>This is a success message</p>
 ```
 
-### Runtime values
+### Runtime values (Local variables)
 
 Quite often you want to share request specific values with your views, this can be done in middleware or controllers by passing an object to the share method.
 
