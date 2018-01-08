@@ -50,4 +50,24 @@ describe('View Class', () => {
     expect(view.options.self).to.equal(true)
     expect(view.options.debug).to.equal(true)
   })
+
+  it('Share method adds to locals and returns template instance', () => {
+    const view = new View(new Helpers(path.join(__dirname, './')), new Config())
+    const template = view.share({myKey: 'some-string'})
+
+    expect(template.locals).to.be.an('object')
+    expect(template.locals.myKey).to.equal('some-string')
+  })
+
+  it('Render a string of pug', () => {
+    const view = new View(new Helpers(path.join(__dirname, './')), new Config())
+
+    expect(view.renderString('a(title="my-link") link')).to.equal('<a title="my-link">link</a>')
+  })
+
+  it('Render a pug template', () => {
+    const view = new View(new Helpers(path.join(__dirname, './')), new Config())
+
+    expect(view.render('basic')).to.equal('<a title="my-link">link</a>')
+  })
 })

@@ -42,7 +42,7 @@ describe('Template class', () => {
     expect(template.locals.myKey).to.equal('some-string')
   })
 
-  it('Share method adds to locals', () => {
+  it('Share method adds to local and applies context to functions', () => {
     const myFunc = function () {
       expect(this.engine.name).to.equal('Pug')
       return true

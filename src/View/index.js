@@ -42,6 +42,38 @@ class View extends AdonisView {
   }
 
   /**
+   * Share variables as a local with this template context
+   *
+   * @param  {Object} locals Key value pairs
+   * @return {Template}      New template instance with locals setup
+   */
+  share (...args) {
+    const template = this.new()
+    template.share(...args)
+    return template
+  }
+
+  /**
+   * Render a pug template
+   * @param  {String} template View file (.pug extension not required)
+   * @param  {Object} locals   Variables to be passed to the view
+   * @return {String}          HTML rendered output
+   */
+  render (...args) {
+    return this.new().render(...args)
+  }
+
+  /**
+   * Render a string of pug
+   * @param  {String} string String to be rendered
+   * @param  {Object} locals Variables to be passed to the view
+   * @return {String}        HTML rendered output
+   */
+  renderString (...args) {
+    return this.new().renderString(...args)
+  }
+
+  /**
    * Add a global variable
    * @param  {String} key  Variable name
    * @param  {Mixed} value Contents of variable
