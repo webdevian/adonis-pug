@@ -20,6 +20,8 @@ class ViewProvider extends AdonisViewProvider {
       return new View(Helpers, Config)
     })
     this.app.alias('Adonis/Src/View', 'View')
+
+    this.app.bind('Adonis/Commands/Make:Pug', () => require('../src/Commands/Pug'))
   }
 
   /**
@@ -48,6 +50,9 @@ class ViewProvider extends AdonisViewProvider {
     Context.getter('view', function () {
       return View.new()
     }, true)
+
+    const ace = require('@adonisjs/ace')
+    ace.addCommand('Adonis/Commands/Make:Pug')
   }
 }
 

@@ -7,7 +7,6 @@ Complete refactor to bring everything inline with the AdonisViewProvider
 
 ### TODO
 
-- Make view command
 - Document code
 - Release v4 on NPM
 
@@ -54,7 +53,13 @@ See the [Pug API documentation](https://pugjs.org/api/reference.html) for more i
 
 Let’s start with the basic example of saying `Hello world` by rendering a pug template. All of the views are stored inside resources/views directory and ends with .pug extension.
 
-Create a pug template at `resources/views/hello.pug`
+Create a pug template at `resources/views/hello.pug`. You can use an adonis/ace command to create the view.
+
+```sh
+adonis make:pug home
+
+    ✔ create  resources/views/home.pug
+```
 
 Now let's create a route that renders it:
 
