@@ -2,12 +2,15 @@
 
 const AdonisViewProvider = require('@adonisjs/framework/providers/ViewProvider.js')
 
+/**
+ * Register provider and ace command
+ *
+ * @constructor
+ */
 class ViewProvider extends AdonisViewProvider {
   /**
    * Register method called by the Ioc container
    * to register the provider
-   *
-   * @method register
    *
    * @return {void}
    */
@@ -27,8 +30,6 @@ class ViewProvider extends AdonisViewProvider {
   /**
    * Boot method called by the Ioc container to
    * boot the provider
-   *
-   * @method boot
    *
    * @return {void}
    */

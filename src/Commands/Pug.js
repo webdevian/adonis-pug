@@ -13,8 +13,6 @@ class MakePug extends Command {
   /**
    * The command signature
    *
-   * @method signature
-   *
    * @return {String}
    */
   static get signature () {
@@ -28,8 +26,6 @@ class MakePug extends Command {
   /**
    * The command description
    *
-   * @method description
-   *
    * @return {String}
    */
   static get description () {
@@ -39,11 +35,8 @@ class MakePug extends Command {
   /**
    * Handle method executed by ace
    *
-   * @method handle
-   *
    * @param  {String} args.name
    * @param  {String} options.layout
-   *
    * @return {void}
    */
   async handle ({ name }, { layout }) {
@@ -55,6 +48,13 @@ class MakePug extends Command {
     }
   }
 
+  /**
+   * Ensures the command is executed within the
+   * project root
+   *
+   * @throws {Error} If not in app root
+   * @return {void}
+   */
   async ensureInProjectRoot () {
     const acePath = path.join(process.cwd(), 'ace')
     const exists = await this.pathExists(acePath)
@@ -64,6 +64,13 @@ class MakePug extends Command {
     }
   }
 
+  /**
+   * Generate pug file
+   *
+   * @param  {String}  name     template filename
+   * @param  {String}  [layout] layout to extend in pug file
+   * @return {String}           Created file path
+   */
   async generateBlueprint (name, layout) {
     const templateFile = path.join(__dirname, './pug.mustache')
 

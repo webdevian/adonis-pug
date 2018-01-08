@@ -8,6 +8,7 @@ Complete refactor to bring everything inline with the AdonisViewProvider
 ### TODO
 
 - Document code
+- Test with emails
 - Release v4 on NPM
 
 # adonis-pug
@@ -74,7 +75,35 @@ The view.render method takes the relative path to the view file. There is no nee
 
 ## Methods
 
-## TODO JSDOC to markdown for api docs here
+These methods are available on the view context in controllers and middleware
+
+#### view.share(locals)
+Share variables as a local with this template context
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| locals | <code>Object</code> | Key value pairs |
+
+#### view.render(template, locals) ⇒ <code>String</code>
+Render a pug template
+
+**Returns**: <code>String</code> - HTML rendered output  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| template | <code>String</code> | View file (.pug extension not required) |
+| locals | <code>Object</code> | Variables to be passed to the view |
+
+#### view.renderString(string, locals) ⇒ <code>String</code>
+Render a string of pug
+
+**Returns**: <code>String</code> - HTML rendered output  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>String</code> | String to be rendered |
+| locals | <code>Object</code> | Variables to be passed to the view |
 
 
 ## View Helpers
@@ -163,7 +192,7 @@ head
 
 ## Extending views
 
-You can also extend views by adding your view globals or tags. Globals and tags should only be added once, so make sure to use the start/hooks.js file to extend views.
+You can also extend views by adding your own view globals. Globals should only be added once, so make sure to use the start/hooks.js file and add them using the after providersBooted hook.
 
 ### Globals
 

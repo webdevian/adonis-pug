@@ -5,6 +5,14 @@ const AdonisView = require('@adonisjs/framework/src/View')
 const Template = require('../Template')
 
 class View extends AdonisView {
+  /**
+   * @class View
+   * @constructor
+   *
+   * @param  {Object} Helpers Adonis Helpers instance
+   * @param  {Object} Config  Adonis Config instance
+   * @return {void}
+   */
   constructor (Helpers, Config) {
     super(Helpers)
 
@@ -25,10 +33,20 @@ class View extends AdonisView {
     this.engine = pug
   }
 
+  /**
+   * Create new template instance
+   * @return {Template}
+   */
   new () {
     return new Template(this.engine, this.viewsPath, this.options, this.globals)
   }
 
+  /**
+   * Add a global variable
+   * @param  {String} key  Variable name
+   * @param  {Mixed} value Contents of variable
+   * @return {void}
+   */
   global (key, value) {
     this.globals[key] = value
   }
