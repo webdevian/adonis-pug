@@ -45,7 +45,7 @@ See the [Pug API documentation](https://pugjs.org/api/reference.html) for more i
 
 ## Basic Usage
 
-Let’s start with the basic example of saying `Hello world` by rendering a pug template. All of the views are stored inside resources/views directory and ends with .pug extension.
+Let’s start with the basic example of saying `Hello world` by rendering a pug template. All of the views are stored inside `resources/views` directory and end with `.pug` extension.
 
 Create a pug template at `resources/views/hello.pug`. You can use an adonis/ace command to create the view.
 
