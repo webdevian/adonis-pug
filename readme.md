@@ -22,6 +22,10 @@ const providers = [
 
 Make sure the default edge provider (`@adonisjs/framework/providers/ViewProvider`) is not registered as they will conflict with each other.
 
+#### Compatibility
+
+*This package has been rebuilt for Adonis 4 and is incompatible with Adonis 3 and earlier. For Adonis v3 install with `adonis-pug@<4.x`. View the docs for this version [here](https://github.com/webdevian/adonis-pug/blob/3.0.1/readme.md).*
+
 ## Config
 
 Pug options can be added to `config/pug.js`, these will be passed to the pug engine:
@@ -39,7 +43,7 @@ Pug options can be added to `config/pug.js`, these will be passed to the pug eng
 
 See the [Pug API documentation](https://pugjs.org/api/reference.html) for more info on these options.
 
-## Usage
+## Basic Usage
 
 Let’s start with the basic example of saying `Hello world` by rendering a pug template. All of the views are stored inside resources/views directory and ends with .pug extension.
 
@@ -62,9 +66,9 @@ Route.get('/', ({ view }) => {
 The view.render method takes the relative path to the view file. There is no need to type .pug extension.
 
 
-## Methods
+## View Methods
 
-These methods are available on the view context in controllers and middleware
+These methods are available on the view context context object in controllers and middleware.
 
 #### view.share(locals)
 Share variables as a local with this template context
@@ -73,6 +77,28 @@ Share variables as a local with this template context
 | Param | Type | Description |
 | --- | --- | --- |
 | locals | <code>Object</code> | Key value pairs |
+
+###### *Example*
+
+Quite often you want to share request specific values with your views, this can be done in middleware or controllers by passing an object to the share method.
+
+```javascript
+class SomeMiddleware {
+  async handle ({ view }, next) {
+    view.share({
+      apiVersion: request.input('version')
+    })
+
+    await next()
+  }
+}
+```
+
+Inside your views, you can access it like any other variable
+
+```pug
+p= apiVersion
+```
 
 #### view.render(template, locals) ⇒ <code>String</code>
 Render a pug template
@@ -225,26 +251,4 @@ View.global('getMessage', function (type) {
 ```pug
 p= getMessage('success')
 // Renders <p>This is a success message</p>
-```
-
-### Runtime values (Local variables)
-
-Quite often you want to share request specific values with your views, this can be done in middleware or controllers by passing an object to the share method.
-
-```javascript
-class SomeMiddleware {
-  async handle ({ view }, next) {
-    view.share({
-      apiVersion: request.input('version')
-    })
-
-    await next()
-  }
-}
-```
-
-Inside your views, you can access it like any other variable
-
-```pug
-p= apiVersion
 ```
