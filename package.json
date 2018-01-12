@@ -8,7 +8,8 @@
   "scripts": {
     "test": "npm run lint && nyc --all mocha",
     "lint": "eslint *.js test/**/*.js src/**/*.js lib/**/*.js ",
-    "coverage": "nyc report --reporter=text-lcov | coveralls && nyc report --reporter=text-lcov | codeclimate-test-reporter"
+    "coverage": "nyc report --reporter=text-lcov | coveralls && nyc report --reporter=text-lcov | codeclimate-test-reporter",
+    "stryker": "stryker run"
   },
   "dependencies": {
     "pug": "^2.0.0-beta11"
@@ -24,13 +25,7 @@
     "@adonisjs/framework": "^4.0.28",
     "@adonisjs/sink": "^1.0.13",
     "apc-style": "^0.4.3",
-    "chai": "^4.1.2",
-    "codeclimate-test-reporter": "^0.5.0",
-    "coveralls": "^3.0.0",
-    "mocha": "^4.0.1",
-    "nyc": "^11.3.0",
-    "sinon": "^4.1.2",
-    "sinon-chai": "^2.14.0"
+    "apc-test": "^1.0.0"
   },
   "repository": {
     "type": "git",
