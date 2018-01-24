@@ -17,8 +17,8 @@ class Template {
   constructor (engine, viewsPath, options, globals) {
     this.engine = engine
     this.viewsPath = viewsPath
-    this.options = options
-    this.globals = globals
+    this.options = Object.assign({}, options)
+    this.globals = Object.assign({}, globals)
 
     Object.keys(this.globals).map(key => {
       const value = this.globals[key]
