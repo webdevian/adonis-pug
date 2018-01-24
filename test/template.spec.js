@@ -57,6 +57,27 @@ describe('Template class', () => {
     expect(template.locals.myFunc()).to.equal(true)
   })
 
+  it('Resolve method fetches a local, option or global', () => {
+    const myFunc = function () {
+      expect(this.engine.name).to.equal('Pug')
+      return true
+    }
+
+    template = new Template(view.engine, '', {}, {})
+
+    template.share({'myFunc': myFunc})
+
+    expect(template.resolve('myFunc')).to.be.a('function')
+    expect(template.resolve('myFunc')()).to.equal(true)
+  })
+
+  it('Resolve method return empty string if nothing can be found', () => {
+    template = new Template(view.engine, '', {}, {})
+
+    expect(template.resolve('myFunc')).to.be.a('string')
+    expect(template.resolve('myFunc')).to.equal('')
+  })
+
   it('Safe method returns same string', () => {
     expect(template.safe('a(title="my-link") link')).to.equal('a(title="my-link") link')
   })

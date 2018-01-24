@@ -91,6 +91,20 @@ class Template {
   safe (string) {
     return string
   }
+
+  /**
+   * Resolves a key in the following order:
+   *
+   * 1. View locals
+   * 2. View Options
+   * 3. View globals
+   *
+   * @param  {String} key
+   * @return {Mixed}
+   */
+  resolve (key) {
+    return this._getOptions()[key] || ''
+  }
 }
 
 module.exports = Template
