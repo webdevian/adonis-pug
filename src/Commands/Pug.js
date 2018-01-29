@@ -11,9 +11,7 @@ const path = require('path')
  */
 class MakePug extends Command {
   /**
-   * The command signature
-   *
-   * @return {String}
+   * @return {String} The command signature
    */
   static get signature () {
     return `
@@ -24,9 +22,7 @@ class MakePug extends Command {
   }
 
   /**
-   * The command description
-   *
-   * @return {String}
+   * @return {String} The command description
    */
   static get description () {
     return 'Make a pug view file'
@@ -35,8 +31,8 @@ class MakePug extends Command {
   /**
    * Handle method executed by ace
    *
-   * @param  {String} args.name
-   * @param  {String} options.layout
+   * @param  {String} args.name       Name of the view file
+   * @param  {String} options.layout  Define a layout to extend
    * @return {void}
    */
   async handle ({ name }, { layout }) {

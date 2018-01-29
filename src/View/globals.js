@@ -26,7 +26,7 @@ module.exports = function (View, Route, Config) {
    * @param {String} url Relative or absolute url
    * @return {String}   Url to asset
    */
-  View.global('assetsUrl', (url) => url && /^\/|^http(s)?/.test(url) ? url : `/${url}`)
+  View.global('assetsUrl', (url) => (url && /^\/|^http(s)?/.test(url) ? url : `/${url}`))
 
   /**
    * Make link tag for css

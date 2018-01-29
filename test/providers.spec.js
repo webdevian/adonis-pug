@@ -18,9 +18,7 @@ const providers = [
 describe('ViewProvider', () => {
   before(() => {
     process.env.ENV_SILENT = true
-    ioc.bind('Adonis/Src/Helpers', function () {
-      return new Helpers(path.join(__dirname, './'))
-    })
+    ioc.bind('Adonis/Src/Helpers', () => new Helpers(path.join(__dirname, './')))
     setupResolver()
     return new Promise((resolve, reject) => {
       registrar

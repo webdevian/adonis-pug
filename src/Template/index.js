@@ -2,10 +2,11 @@
 
 const path = require('path')
 
+/**
+ * View template, the context of this will be tied to one http request
+ */
 class Template {
   /**
-   * View template, the context of this should be tied to one http request
-   *
    * @constructor
    *
    * @param  {Object} engine    Instance of pug
