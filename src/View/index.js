@@ -4,9 +4,12 @@ const pug = require('pug')
 const AdonisView = require('@adonisjs/framework/src/View')
 const Template = require('../Template')
 
+/**
+ * @class View
+ * @extends AdonisView
+ */
 class View extends AdonisView {
   /**
-   * @class View
    * @constructor
    *
    * @param  {Object} Helpers Adonis Helpers instance
