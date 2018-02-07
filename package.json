@@ -15,9 +15,9 @@
     "pug": "^2.0.0-beta11"
   },
   "peerDependencies": {
-    "@adonisjs/ace": "^4.0.7",
-    "@adonisjs/fold": "^4.0.5",
-    "@adonisjs/framework": "^4.0.28"
+    "@adonisjs/ace": ">=4.0.7",
+    "@adonisjs/fold": ">=4.0.5",
+    "@adonisjs/framework": ">=4.0.28"
   },
   "devDependencies": {
     "@adonisjs/ace": "^5.0.0",
@@ -30,36 +30,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/webdevian/adonis-pug.git"
-  },
-  "nyc": {
-    "include": [
-      "src/**/*.js",
-      "providers/**/*.js"
-    ],
-    "all": true,
-    "watermarks": {
-      "lines": [
-        90,
-        99
-      ],
-      "functions": [
-        90,
-        99
-      ],
-      "branches": [
-        90,
-        99
-      ],
-      "statements": [
-        90,
-        99
-      ]
-    },
-    "reporter": [
-      "text",
-      "html"
-    ],
-    "cache": true
   },
   "bugs": {
     "url": "https://github.com/webdevian/adonis-pug/issues"

@@ -1,0 +1,30 @@
+{
+  "include": [
+    "src/**/*.js",
+    "providers/**/*.js"
+  ],
+  "all": true,
+  "watermarks": {
+    "lines": [
+      90,
+      99
+    ],
+    "functions": [
+      90,
+      99
+    ],
+    "branches": [
+      90,
+      99
+    ],
+    "statements": [
+      90,
+      99
+    ]
+  },
+  "reporter": [
+    "text",
+    "html"
+  ],
+  "cache": true
+}
