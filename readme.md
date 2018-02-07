@@ -1,4 +1,5 @@
-[![NPM Package](https://img.shields.io/npm/v/adonis-pug.svg?maxAge=2592000)](https://npmjs.com/package/adonis-pug) ![License](https://img.shields.io/npm/l/adonis-pug.svg) [![Build Status](https://travis-ci.org/webdevian/adonis-pug.svg?branch=master)](https://travis-ci.org/webdevian/adonis-pug) [![Coverage Status](https://coveralls.io/repos/github/webdevian/adonis-pug/badge.svg?branch=master)](https://coveralls.io/github/webdevian/adonis-pug?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/webdevian/adonis-pug.svg)](https://greenkeeper.io/) [![Maintainability](https://api.codeclimate.com/v1/badges/af5c99c485663e078c61/maintainability)](https://codeclimate.com/github/webdevian/adonis-pug/maintainability)
+[![NPM Package][npm-badge]][npm-link] [![License][license-badge]][license-link] [![Build Status][travis-badge]][travis-link] [![Coverage Status][coveralls-badge]][coveralls-link] [![Maintainability][cc-badge]][cc-link] [![Dependencies][dm-badge]][dm-link] [![Dev Dependencies][dmdev-badge]][dmdev-link] [![Greenkeeper badge][gk-badge]][gk-link]
+
 
 # Adonis Pug
 
@@ -257,3 +258,19 @@ View.global('getMessage', function (type) {
 p= getMessage('success')
 // Renders <p>This is a success message</p>
 ```
+[npm-badge]: https://img.shields.io/npm/v/adonis-pug.svg?maxAge=30
+[npm-link]:https://npmjs.com/package/adonis-pug
+[license-badge]: https://img.shields.io/npm/l/adonis-pug.svg
+[license-link]: https://github/webdevian/adonis-pug/blob/master/LICENSE
+[travis-badge]: https://travis-ci.org/webdevian/adonis-pug.svg?branch=master
+[travis-link]: https://travis-ci.org/webdevian/adonis-pug
+[coveralls-badge]: https://coveralls.io/repos/github/webdevian/adonis-pug/badge.svg?branch=master
+[coveralls-link]: https://coveralls.io/github/webdevian/adonis-pug?branch=master
+[cc-badge]: https://img.shields.io/codeclimate/maintainability/webdevian/adonis-pug.svg
+[cc-link]: https://codeclimate.com/github/webdevian/adonis-pug/maintainability
+[dm-badge]: https://img.shields.io/david/webdevian/adonis-pug.svg
+[dm-link]: https://david-dm.org/webdevian/adonis-pug
+[dmdev-badge]: https://img.shields.io/david/dev/webdevian/adonis-pug.svg
+[dmdev-link]: https://david-dm.org/webdevian/adonis-pug
+[gk-badge]: https://badges.greenkeeper.io/webdevian/adonis-pug.svg
+[gk-link]: https://greenkeeper.io/
