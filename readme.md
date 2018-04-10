@@ -145,12 +145,12 @@ Also, there is a direct helper to get the URL.
 p The request URL is #{url}
 ```
 
-### css
+### style - *formerly css (deprecated)*
 
 Add link tag to a CSS file. The file name should be relative from the public directory. Absolute links are left alone (for external CDNs etc)
 
 ``` pug
-!= css('style')
+!= style('style')
 // Renders <link rel='stylesheet' href="/style.css">
 ```
 

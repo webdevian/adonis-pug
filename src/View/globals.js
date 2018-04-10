@@ -35,8 +35,21 @@ module.exports = function (View, Route, Config) {
    * @param {Boolean} [skipSuffix=false]  Don't add css file suffix?
    * @return {String}                    HTML link tag
    */
-  View.global('css', function (url, skipSuffix = false) {
+  View.global('style', function (url, skipSuffix = false) {
     return `<link rel="stylesheet" href="${this.globals.assetsUrl(appendToUrl(url, 'css', skipSuffix))}" />`
+  })
+
+  /**
+   * Make link tag for css
+   *
+   * @deprecated
+   * @param {String}  url                 Filename or url
+   * @param {Boolean} [skipSuffix=false]  Don't add css file suffix?
+   * @return {String}                    HTML link tag
+   */
+  View.global('css', function (url, skipSuffix = false) {
+    console.warn('Adonis-Pug: The css view global has been deprecated in favour of "style"')
+    return this.globals.style(url, skipSuffix)
   })
 
   /**

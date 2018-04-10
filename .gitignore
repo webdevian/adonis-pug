@@ -4,3 +4,4 @@ coverage
 
 .stryker-tmp
 reports
+yarn-error.log

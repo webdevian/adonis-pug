@@ -73,7 +73,7 @@ describe('ViewProvider', () => {
     viewProviderInstance.boot()
 
     const contextMethod = contextSpy.lastCall.args[1]
-    expect(contextMethod().globals).to.have.keys(['route', 'assetsUrl', 'css', 'script'])
+    expect(contextMethod().globals).to.have.keys(['route', 'assetsUrl', 'css', 'script', 'style'])
 
     contextSpy.restore()
   })

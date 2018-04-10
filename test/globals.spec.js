@@ -80,6 +80,27 @@ describe('Globals', () => {
     expect(template.globals.css('style', true)).to.equal('<link rel="stylesheet" href="/style" />')
   })
 
+  it('style method returns css link tag', () => {
+    template = view.new()
+
+    expect(template.globals.style).to.be.a('function')
+    expect(template.globals.style('style.css')).to.equal('<link rel="stylesheet" href="/style.css" />')
+  })
+
+  it('style method adds css suffix', () => {
+    template = view.new()
+
+    expect(template.globals.style).to.be.a('function')
+    expect(template.globals.style('style')).to.equal('<link rel="stylesheet" href="/style.css" />')
+  })
+
+  it('style method doesn\'t add css suffix if flag set', () => {
+    template = view.new()
+
+    expect(template.globals.style).to.be.a('function')
+    expect(template.globals.style('style', true)).to.equal('<link rel="stylesheet" href="/style" />')
+  })
+
   it('script method returns script tag', () => {
     template = view.new()
 
