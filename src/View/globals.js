@@ -49,7 +49,7 @@ module.exports = function (View, Route, Config) {
    */
   View.global('css', function (url, skipSuffix = false) {
     console.warn('Adonis-Pug: The css view global has been deprecated in favour of "style"')
-    return this.globals.style(url, skipSuffix)
+    return this.globals.style.bind(this, url, skipSuffix)()
   })
 
   /**
