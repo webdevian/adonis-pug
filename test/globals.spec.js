@@ -45,11 +45,24 @@ describe('Globals', () => {
     expect(template.globals.route('someArg')).to.equal(true)
   })
 
-  it('AssetsUrl method returns relative url', () => {
+  it('AssetsUrl method returns relative url if baseUrl is not set in config', () => {
+    template = view.new()
+
+    Globals(view, {}, null)
     template = view.new()
 
     expect(template.globals.assetsUrl).to.be.a('function')
     expect(template.globals.assetsUrl('style.js')).to.equal('/style.js')
+  })
+
+  it('AssetsUrl method returns full url if baseUrl is set in config', () => {
+    const config = new Config()
+    config.set('app.http.baseUrl', 'https://my-base-url')
+    Globals(view, {}, config)
+    template = view.new()
+
+    expect(template.globals.assetsUrl).to.be.a('function')
+    expect(template.globals.assetsUrl('style.js')).to.equal('https://my-base-url/style.js')
   })
 
   it('AssetsUrl method returns absolute url', () => {
