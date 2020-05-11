@@ -28,6 +28,7 @@ class View extends AdonisView {
       doctype: Config.get('pug.doctype') || undefined,
       filters: Config.get('pug.filters') || {},
       self: !!Config.get('pug.self') || false,
+      compileDebug: !!Config.get('pug.compileDebug') || false,
       debug: !!Config.get('pug.debug') || false
     }
 

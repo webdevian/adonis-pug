@@ -43,6 +43,7 @@ Pug options can be added to `config/pug.js`, these will be passed to the pug eng
     doctype: undefined,
     filters: undefined,
     self: false,
+    compileDebug: false,
     debug: false
   }
 ```
